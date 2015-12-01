@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML style="visibility: visible;" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<META content="IE=11.0000" http-equiv="X-UA-Compatible">
+		<META name="viewport" content="initial-scale=1.0">
+		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<META name="description" content="Salesforce Customer Secure Login Page. Login to your Salesforce Customer Account.">
+		<TITLE>eHS Login Form</TITLE>
+		<META name="format-detection" content="telephone=no">
+
+		<!-- Styles -->
+		<LINK rel="stylesheet" href="css/app.layouts.login.css" type="text/css">
+
+		<STYLE type="text/css">html{visibility: hidden;}a{color:#0070d2;}body{background-color:#F4F6F9;}#content,.container{background-color:#ffffff;}#header{color:#16325c;}body{display: table; width:100%;}#content{margin-bottom:24px;}#wrap{height:100%;}</STYLE>
+
+	    <STYLE type="text/css"> html { visibility: hidden; } </STYLE>
+
+	    <SCRIPT type="text/javascript">if (self == top) {document.documentElement.style.visibility = 'visible';} else {document.write = ''; top.location = self.location; setTimeout(function(){document.body.innerHTML='';}, 1);window.self.onload=function(evt){document.body.innerHTML='';};}</SCRIPT>
+
+
+		<SCRIPT src="js/SfdcSessionBase198.js"></SCRIPT>
+
+		<SCRIPT src="js/LoginHint198.js"></SCRIPT>
+		<SCRIPT>LoginHint.hideLoginForm();</SCRIPT>
+
+		<META name="GENERATOR" content="MSHTML 11.00.9600.18057">
+
+	
+	</head>
+
+	<BODY onload="lazyload();">
+		<DIV class="pr" id="left">
+			<DIV id="wrap">
+			<DIV id="main">
+			<DIV id="wrapper">
+			<DIV class="standard_logo_wrapper mb24" id="logo_wrapper">
+				<H1 style="height: 100%; vertical-align: bottom; display: table-cell;">
+					<IMG name="logo" class="standard_logo" id="logo" alt="Salesforce" src="img/eHealthOriginal.png" border="0">
+				</H1>
+			</DIV>
+			<DIV class="mb24" id="header"></DIV>
+			<DIV id="content">
+			<DIV id="chooser" style="display: none;">
+				<DIV class="loginError" id="chooser_error" style="display: none;"></DIV>
+				<DIV>
+					<SPAN class="label" id="chooser_label"></SPAN>
+					<A class="fr small" id="edit" onclick="LoginHint.showEdit();" href="javascript:void(0);">Edit List</A>
+				</DIV>
+				<DIV class="scrollable mt8"><UL id="idlist"></UL></DIV>
+			</DIV>
+			<DIV id="manager" style="display: none;">
+				<DIV class="nonscrollable mt8">
+					<UL class="mb24" id="editlist" aria-live="polite" aria-relevant="additions removals"></UL>
+				</DIV>
+				<DIV class="mt16"><BUTTON name="Save" class="button primary fiftyfifty right" 
+				id="hint_save_edit" onclick="LoginHint.saveHintEdit();">Save</BUTTON><BUTTON 
+				name="Cancel" class="button secondary fiftyfifty" id="hint_back_edit" onclick="LoginHint.showChooser();">Cancel</BUTTON></DIV>
+			</DIV>
+			<DIV id="theloginform">
+				<FORM name="login" id="login_form" onsubmit="handleLogin();" action="http://www.ehealthsolutionsinc.com/" method="post" target="_top" novalidate="novalidate" autocomplete="off">
+					<FIELDSET style="display: none;">
+						<INPUT name="un" type="hidden">  
+						<INPUT name="width" type="hidden"> 
+						<INPUT name="height" type="hidden">  
+						<INPUT name="hasRememberUn" type="hidden" value="true">  
+						<INPUT name="startURL" id="login_startUrl" type="hidden">  
+						<INPUT name="loginURL" type="hidden"> 
+						<INPUT name="loginType" type="hidden">  
+						<INPUT name="useSecure" type="hidden" value="true">  
+						<INPUT name="local" type="hidden"> 
+						<INPUT name="lt" type="hidden" value="standard">  
+						<INPUT name="qs" type="hidden"> 
+						<INPUT name="locale" type="hidden">  
+						<INPUT name="oauth_token" type="hidden">  
+						<INPUT name="oauth_callback" type="hidden">  
+						<INPUT name="login" type="hidden">  
+						<INPUT name="serverid" type="hidden">  
+						<INPUT name="display" type="hidden" value="page">
+					</FIELDSET>
+					<DIV class="inputgroup" id="usernamegroup">
+						<LABEL class="label" for="username">Username</LABEL>
+						<DIV id="username_container">
+							<DIV class="mt8 mb16" id="idcard-container" style="display: none;">
+								<DIV id="idcard">
+									<IMG class="avatar" id="idcard-avatar" alt="">
+									<A class="clearlink" id="clear_link" onclick="LoginHint.clearExistingIdentity();" href="javascript:void(0);">
+										<IMG class="clearicon" alt="Log In with a Different Username" src="Login%20%20Salesforce_com-_files/clear.png">
+									</A>
+									<SPAN id="idcard-identity"></SPAN>
+								</DIV>
+							</DIV>
+							<INPUT name="username" class="input r4 wide mb16 mt8 username" id="username" type="email">
+						</DIV>
+					</DIV>
+					<LABEL class="label" for="password">Password</LABEL>
+					<INPUT name="pw" class="input r4 wide mb16 mt8 password" id="password" onkeypress="checkCaps(event)" type="password" autocomplete="off">
+					<DIV class="mb16" id="pwcaps" style="display: none;">
+						<IMG width="12" id="pwcapsicon" alt="Caps Lock is on."> 
+							Caps Lock is on.
+					</DIV>
+					<INPUT name="Login" class="button r4 wide primary" id="Login" type="submit" value="Log In">
+					<DIV class="w0 pr ln3 p16 remember">
+						<INPUT name="rememberUn" class="r4 fl mr8" id="rememberUn" type="checkbox">
+						<LABEL class="fl pr db tn3" for="rememberUn">Remember me</LABEL><BR>
+					</DIV>
+				</FORM>
+				<DIV class="w0 links bt pt16 mb20"><A class="fl small" id="forgot_password_link" 
+						href="http://www.ehealthsolutionsinc.com/">Forgot 
+						Your Password?</A><A class="fr small" id="mydomainLink" onclick="DomainSwitcher.enterCustomDomain('Use Custom Domain',' | Salesforce')" 
+						href="javascript:void(0);">Use Custom Domain</A>
+				</DIV>
+			</DIV>
+
+		<DIV id="mydomainContainer" style="display: none;">
+			<P class="mb16">To go to your company's login page, enter the custom domain name.</P>
+			<FORM onsubmit="DomainSwitcher.handleMyDomain();return false;">
+				<LABEL class="label" for="mydomain">Custom Domain</LABEL>
+				<INPUT name="mydomain" class="input wide focus mt8 mb16" id="mydomain" onkeyup="DomainSwitcher.updateMyDomain(this, event);" type="text">
+				<DIV class="mb16 wordwrap" id="mydomain_preview">https://<EM>domain</EM>.my.eHealthSolutions.com</DIV>
+			</FORM>
+			<INPUT id="mydomain_suffix" type="hidden" value=".my.salesforce.com"><INPUT id="community_suffix" type="hidden" value=".na3.force.com"><BUTTON 
+			name="Continue" class="button primary fiftyfifty right" id="mydomainContinue" 
+			onclick="DomainSwitcher.handleMyDomain();">Continue</BUTTON><BUTTON class="button secondary fiftyfifty" 
+			id="hint_back_domain" onclick="DomainSwitcher.dismissCustomDomain('Login',' | Salesforce');">Back</BUTTON></DIV>
+		</DIV>
+			<DIV class="tc mt24" id="signup">
+			<P class="di mr16">Not a customer?</P><A class="button secondary" id="signup_link" 
+			href="http://www.ehealthsolutionsinc.com/">Try for Free</A></DIV>
+			<DIV class="tc" id="use_new_identity_div" style="display: none;"><A id="use_new_identity" 
+			onclick="LoginHint.useNewIdentity();" href="javascript:void(0);">Log In with a 
+			Different Username</A></DIV></DIV></DIV>
+		</DIV>
+		<DIV id="footer">© 2015 eHealthSolutions,inc. All rights reserved.</DIV>
+	</DIV>
+
+	<DIV id="right">
+		<IFRAME name="marketing" tabindex="-1" title="Marketing" id="marketing" src="LoginRight.html" frameborder="0"></IFRAME>
+	</DIV>
+
+
+	</BODY>
+</HTML>
